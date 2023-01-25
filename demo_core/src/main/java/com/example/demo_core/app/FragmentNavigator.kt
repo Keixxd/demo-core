@@ -9,8 +9,8 @@ import com.example.demo_core.R
 class FragmentNavigator(activity: Activity, fragmentManager: FragmentManager) {
 
     private val fragmentManager: FragmentManager
-    protected val app: CoreApp
-    protected val activity: Activity
+    private val app: CoreApp
+    private val activity: Activity
 
     init {
         this.fragmentManager = fragmentManager
@@ -18,11 +18,19 @@ class FragmentNavigator(activity: Activity, fragmentManager: FragmentManager) {
         this.app = activity.applicationContext as CoreApp
     }
 
-    fun changeFragment(fragment: Fragment){
-        fragmentManager.beginTransaction()
-            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-            .addToBackStack(fragment.javaClass.name)
-            .replace(R.id.content_frame, fragment, fragment.javaClass.name)
-            .commitAllowingStateLoss()
+    fun changeFragment(fragment: Fragment, backstack: Boolean = true){
+        if (backstack){
+            fragmentManager.beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                .addToBackStack(fragment.javaClass.name)
+                .replace(R.id.content_frame, fragment, fragment.javaClass.name)
+                .commitAllowingStateLoss()
+
+        }else{
+            fragmentManager.beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                .replace(R.id.content_frame, fragment, fragment.javaClass.name)
+                .commitAllowingStateLoss()
+        }
     }
 }

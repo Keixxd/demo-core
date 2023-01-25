@@ -4,17 +4,19 @@ import android.os.Bundle
 import com.example.demo_core.R
 import com.example.demo_core.app.FragmentNavigator
 import com.example.demo_core.base.BaseActivity
-import com.example.demo_core.fragments.DemoFragment
+import com.example.demo_core.modules.demo.view.DemoFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
-    private lateinit var fragmentNavigator: FragmentNavigator
+    lateinit var fragmentNavigator: FragmentNavigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         fragmentNavigator = FragmentNavigator(this, this.supportFragmentManager)
-        fragmentNavigator.changeFragment(DemoFragment())
+        fragmentNavigator.changeFragment(DemoFragment(), false)
     }
 
 }

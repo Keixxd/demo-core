@@ -3,6 +3,7 @@ package com.example.demo_core.app
 import android.app.Activity
 import android.app.Application
 import android.content.Context
+import dagger.hilt.android.HiltAndroidApp
 
 open class CoreApp : Application() {
 

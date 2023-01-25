@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Mark/AndroidStudioProjects/demo-core/demo_core/src/main/res/layout/base_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/Mark/AndroidStudioProjects/demo-core/demo_core/src/main/res/layout/demo_fragment.xml" value="0.2269021739130435" />
         <entry key="..\:/Users/Mark/AndroidStudioProjects/demo-core/demo_core/src/main/res/layout/main_activity.xml" value="0.2269021739130435" />
+        <entry key="..\:/Users/Mark/AndroidStudioProjects/demo-core/demo_core/src/main/res/layout/second_demo_fragment.xml" value="0.2269021739130435" />
       </map>
     </option>
   </component>
